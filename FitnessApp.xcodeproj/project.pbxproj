@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88045403255DFD8900BD619E /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88045402255DFD8900BD619E /* CoursesView.swift */; };
+		884780D8255D6C1B004D3782 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884780D7255D6C1B004D3782 /* Extensions.swift */; };
 		88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C1255CAAEB003E9153 /* AppDelegate.swift */; };
 		88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */; };
 		88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C5255CAAEB003E9153 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88045402255DFD8900BD619E /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		884780D7255D6C1B004D3782 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		88DF48BE255CAAEB003E9153 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DF48C1255CAAEB003E9153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88045401255DFD5000BD619E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88045402255DFD8900BD619E /* CoursesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		884780D5255D6BFD004D3782 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				884780D7255D6C1B004D3782 /* Extensions.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		884780D6255D6C05004D3782 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88DF48C5255CAAEB003E9153 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		88DF48B5255CAAEB003E9153 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +86,11 @@
 		88DF48C0255CAAEB003E9153 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				884780D5255D6BFD004D3782 /* Resources */,
+				88045401255DFD5000BD619E /* Views */,
+				884780D6255D6C05004D3782 /* Controllers */,
 				88DF48C1255CAAEB003E9153 /* AppDelegate.swift */,
 				88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */,
-				88DF48C5255CAAEB003E9153 /* ViewController.swift */,
 				88DF48C7255CAAEB003E9153 /* Main.storyboard */,
 				88DF48CD255CAAF0003E9153 /* Assets.xcassets */,
 				88DF48CF255CAAF0003E9153 /* LaunchScreen.storyboard */,
@@ -142,8 +172,10 @@
 			files = (
 				88DF48CC255CAAEB003E9153 /* FitnessApp.xcdatamodeld in Sources */,
 				88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */,
+				884780D8255D6C1B004D3782 /* Extensions.swift in Sources */,
 				88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */,
 				88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */,
+				88045403255DFD8900BD619E /* CoursesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
