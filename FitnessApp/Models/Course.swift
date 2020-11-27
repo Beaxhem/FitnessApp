@@ -12,6 +12,7 @@ class Course {
     var id = UUID()
     var imageName: String = ""
     var title: String = ""
+    var subtitle: String = "Check this out"
     
     init(title: String, imageName: String) {
         self.title = title

@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var data: [Course] = [Course(title: "Test title", imageName: "1"), Course(title: "Test title", imageName: "2"), Course(title: "Test title", imageName: "3")]
+    var data: [Course] = [Course(title: "Training by Helen McGregor", imageName: "1"), Course(title: "Test title", imageName: "2"), Course(title: "Test title", imageName: "3")]
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -28,13 +28,18 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let recommendations: UILabel = {
-        let view = UILabel()
+    let recommendations: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         
-        view.text = "Recommendation"
-        view.translatesAutoresizingMaskIntoConstraints = false
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        return view
+        collectionView.register(CourseCell.self, forCellWithReuseIdentifier: CourseCell.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return collectionView
     }()
     
     let mostPopular: UILabel = {
@@ -112,9 +117,13 @@ class ViewController: UIViewController {
             recommendations.topAnchor.constraint(equalTo: recommendationsHeader.bottomAnchor, constant: 10),
             recommendations.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
             recommendations.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            recommendations.heightAnchor.constraint(equalToConstant: 260)
+            recommendations.heightAnchor.constraint(equalToConstant: 220)
         ])
-        recommendations.backgroundColor = .red
+        
+        recommendations.backgroundColor = .clear
+        recommendations.delegate = self
+        recommendations.dataSource = self
+        
         
         let popularTrainingsHeader: UILabel = getHeader(text: "Most popular")
         contentView.addSubview(popularTrainingsHeader)
@@ -181,9 +190,7 @@ class ViewController: UIViewController {
 //        coursesView.heightAnchor.constraint(equalToConstant: 300).isActive = true
 //        coursesView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 //
-//        coursesView.backgroundColor = .clear
-//        coursesView.delegate = self
-//        coursesView.dataSource = self
+        
     }
 }
 
@@ -195,7 +202,7 @@ extension ViewController {
         label.font = .boldSystemFont(ofSize: 21)
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 21).isActive = true
         
         return label
     }
@@ -203,7 +210,7 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.width/2)
+        return CGSize(width: collectionView.width - collectionView.contentInset.left - collectionView.contentInset.right, height: collectionView.height)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
@@ -225,7 +232,8 @@ class CourseCell: UICollectionViewCell {
     
     var data: Course? {
         didSet {
-            text.text = data?.title
+            title.text = data?.title
+            subtitle.text = data?.subtitle
             imageView.image = UIImage(named: data!.imageName)
         }
     }
@@ -236,19 +244,30 @@ class CourseCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
         
         return imageView
     }()
     
-    let text: UILabel = {
+    let title: UILabel = {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 21)
+        label.textColor = .white
         
         return label
     }()
     
-    
+    let subtitle: UILabel = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 11, weight: .light)
+        label.textColor = .white
+        
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -260,13 +279,23 @@ class CourseCell: UICollectionViewCell {
         imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        contentView.addSubview(text)
+        contentView.addSubview(subtitle)
         
-        text.backgroundColor = .white
-        text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        text.heightAnchor.constraint(equalToConstant:  40).isActive = true
+        NSLayoutConstraint.activate([
+            subtitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            subtitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            subtitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            subtitle.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        contentView.addSubview(title)
+        
+        NSLayoutConstraint.activate([
+            title.bottomAnchor.constraint(equalTo: subtitle.topAnchor, constant: 5),
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            title.heightAnchor.constraint(equalToConstant: 25)
+        ])
     }
     
     override func layoutSubviews() {
