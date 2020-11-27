@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fd6-Za-4hg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fd6-Za-4hg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Trainings-->
         <scene sceneID="cxu-aX-cZD">
             <objects>
-                <viewController id="1iI-SQ-adM" sceneMemberID="viewController">
+                <viewController id="1iI-SQ-adM" customClass="ViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHV-ZG-pd0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,31 +70,31 @@
             </objects>
             <point key="canvasLocation" x="-74" y="687"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="k7h-0r-wHM">
+        <!--Discover-->
+        <scene sceneID="VBg-IG-9Ym">
             <objects>
-                <navigationController id="bZM-JA-O6N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="6pZ-3a-mV7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rMD-Dl-Rwy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                <navigationController id="fRY-ko-FJi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="safari.fill" catalog="system" id="zon-zP-Lrh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ekv-v9-7yI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemGreenColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemGreenColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="mPC-ux-MYh" kind="relationship" relationship="rootViewController" id="IrT-fi-KMX"/>
+                        <segue destination="mPC-ux-MYh" kind="relationship" relationship="rootViewController" id="LNd-Cg-bUq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPu-hf-50A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DD-zq-Iba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="-786"/>
+            <point key="canvasLocation" x="-74" y="-769"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="amr-Dt-mKm">
             <objects>
                 <viewController id="mPC-ux-MYh" customClass="ViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,11 +104,12 @@
                         <viewLayoutGuide key="safeArea" id="Jr4-Le-Haz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="VhA-of-geT"/>
                     <navigationItem key="navigationItem" id="kOa-kj-6Vp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boP-pH-EjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="-787.55622188905556"/>
+            <point key="canvasLocation" x="876" y="-770"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4xa-Gm-6TI">
@@ -120,9 +121,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bZM-JA-O6N" kind="relationship" relationship="viewControllers" id="dWY-vV-1Cg"/>
-                        <segue destination="1iI-SQ-adM" kind="relationship" relationship="viewControllers" id="Ex9-5K-o2y"/>
-                        <segue destination="rQk-46-I7t" kind="relationship" relationship="viewControllers" id="6ki-Cd-4Xi"/>
+                        <segue destination="fRY-ko-FJi" kind="relationship" relationship="viewControllers" id="9nf-02-EfT"/>
+                        <segue destination="1iI-SQ-adM" kind="relationship" relationship="viewControllers" id="825-SN-46T"/>
+                        <segue destination="rQk-46-I7t" kind="relationship" relationship="viewControllers" id="avf-G3-U2b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZi-0b-vCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,8 +133,8 @@
     </scenes>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="safari.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
