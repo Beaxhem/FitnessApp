@@ -28,16 +28,8 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let recommendations: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        collectionView.register(CourseCell.self, forCellWithReuseIdentifier: CourseCell.identifier)
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+    let recommendations: UIView = {
+        let collectionView = RecommendationsSlider()
         
         return collectionView
     }()
@@ -68,20 +60,6 @@ class ViewController: UIViewController {
         
         return view
     }()
-    
-    let coursesView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        collectionView.register(CourseCell.self, forCellWithReuseIdentifier: CourseCell.identifier)
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return collectionView
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,9 +87,6 @@ class ViewController: UIViewController {
             recommendationsHeader.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
         ])
         
-        
-        
-        
         contentView.addSubview(recommendations)
         NSLayoutConstraint.activate([
             recommendations.topAnchor.constraint(equalTo: recommendationsHeader.bottomAnchor, constant: 10),
@@ -119,11 +94,6 @@ class ViewController: UIViewController {
             recommendations.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             recommendations.heightAnchor.constraint(equalToConstant: 220)
         ])
-        
-        recommendations.backgroundColor = .clear
-        recommendations.delegate = self
-        recommendations.dataSource = self
-        
         
         let popularTrainingsHeader: UILabel = getHeader(text: "Most popular")
         contentView.addSubview(popularTrainingsHeader)
@@ -177,20 +147,10 @@ class ViewController: UIViewController {
             coaches.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
             coaches.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             coaches.heightAnchor.constraint(equalToConstant: 210),
-            coaches.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            coaches.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
         
         coaches.backgroundColor = .green
-        
-//        contentView.addSubview(coursesView)
-
-//        coursesView.topAnchor.constraint(equalTo: trainingsHeader.bottomAnchor, constant: 10).isActive = true
-//        coursesView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-//        coursesView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-//        coursesView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-//        coursesView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-//
-        
     }
 }
 
@@ -205,121 +165,5 @@ extension ViewController {
         label.heightAnchor.constraint(equalToConstant: 21).isActive = true
         
         return label
-    }
-}
-
-extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.width - collectionView.contentInset.left - collectionView.contentInset.right, height: collectionView.height)
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCell.identifier, for: indexPath) as! CourseCell
-        
-        cell.data = data[indexPath.item]
-        
-        return cell
-    }
-}
-
-class CourseCell: UICollectionViewCell {
-    static let identifier = "CourseCell"
-    
-    private var theShadowLayer: CAShapeLayer?
-    
-    var data: Course? {
-        didSet {
-            title.text = data?.title
-            subtitle.text = data?.subtitle
-            imageView.image = UIImage(named: data!.imageName)
-        }
-    }
-
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 12
-        
-        return imageView
-    }()
-    
-    let title: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 21)
-        label.textColor = .white
-        
-        return label
-    }()
-    
-    let subtitle: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 11, weight: .light)
-        label.textColor = .white
-        
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        contentView.addSubview(imageView)
-        
-        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
-        contentView.addSubview(subtitle)
-        
-        NSLayoutConstraint.activate([
-            subtitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-            subtitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            subtitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            subtitle.heightAnchor.constraint(equalToConstant: 20)
-        ])
-        
-        contentView.addSubview(title)
-        
-        NSLayoutConstraint.activate([
-            title.bottomAnchor.constraint(equalTo: subtitle.topAnchor, constant: 5),
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            title.heightAnchor.constraint(equalToConstant: 25)
-        ])
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        if self.theShadowLayer == nil {
-            let rounding = CGFloat.init(22.0)
-
-            let shadowLayer = CAShapeLayer.init()
-            self.theShadowLayer = shadowLayer
-            shadowLayer.path = UIBezierPath.init(roundedRect: bounds, cornerRadius: rounding).cgPath
-            shadowLayer.fillColor = UIColor.clear.cgColor
-
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowRadius = CGFloat.init(3.0)
-            shadowLayer.shadowOpacity = Float.init(0.2)
-            shadowLayer.shadowOffset = CGSize.init(width: 0.0, height: 4.0)
-
-            self.layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

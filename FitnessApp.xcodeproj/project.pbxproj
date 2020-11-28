@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88045403255DFD8900BD619E /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88045402255DFD8900BD619E /* CoursesView.swift */; };
 		884780D8255D6C1B004D3782 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884780D7255D6C1B004D3782 /* Extensions.swift */; };
+		8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E6257307E200B5A7A6 /* Slider.swift */; };
+		8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */; };
 		8884DCB0255EC67D003EAAA3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884DCAF255EC67D003EAAA3 /* Course.swift */; };
 		88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C1255CAAEB003E9153 /* AppDelegate.swift */; };
 		88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */; };
@@ -20,8 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		88045402255DFD8900BD619E /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
 		884780D7255D6C1B004D3782 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8876D2E6257307E200B5A7A6 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
 		8884DCAF255EC67D003EAAA3 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		88DF48BE255CAAEB003E9153 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DF48C1255CAAEB003E9153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		88045401255DFD5000BD619E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88045402255DFD8900BD619E /* CoursesView.swift */,
+				8876D2E02573077F00B5A7A6 /* RecommendationsSlider */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -67,6 +69,15 @@
 				88DF48C5255CAAEB003E9153 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8876D2E02573077F00B5A7A6 /* RecommendationsSlider */ = {
+			isa = PBXGroup;
+			children = (
+				8876D2E6257307E200B5A7A6 /* Slider.swift */,
+				8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */,
+			);
+			path = RecommendationsSlider;
 			sourceTree = "<group>";
 		};
 		8884DCAE255EC66E003EAAA3 /* Models */ = {
@@ -142,6 +153,7 @@
 				TargetAttributes = {
 					88DF48BD255CAAEB003E9153 = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -181,13 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */,
 				88DF48CC255CAAEB003E9153 /* FitnessApp.xcdatamodeld in Sources */,
 				8884DCB0255EC67D003EAAA3 /* Course.swift in Sources */,
 				88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */,
 				884780D8255D6C1B004D3782 /* Extensions.swift in Sources */,
 				88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */,
 				88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */,
-				88045403255DFD8900BD619E /* CoursesView.swift in Sources */,
+				8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87N7QPTHS6;
 				INFOPLIST_FILE = FitnessApp/Info.plist;
@@ -343,6 +357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaxhem.FitnessApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87N7QPTHS6;
 				INFOPLIST_FILE = FitnessApp/Info.plist;
