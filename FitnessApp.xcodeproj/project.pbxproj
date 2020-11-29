@@ -10,7 +10,10 @@
 		884780D8255D6C1B004D3782 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884780D7255D6C1B004D3782 /* Extensions.swift */; };
 		8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E6257307E200B5A7A6 /* Slider.swift */; };
 		8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */; };
+		8876D2EE25730F7100B5A7A6 /* MostPopularCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2ED25730F7100B5A7A6 /* MostPopularCoursesView.swift */; };
+		8876D2F225730F8F00B5A7A6 /* SquaredCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2F125730F8F00B5A7A6 /* SquaredCourseCell.swift */; };
 		8884DCB0255EC67D003EAAA3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884DCAF255EC67D003EAAA3 /* Course.swift */; };
+		88BB881F2573116200617508 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB881E2573116200617508 /* Test.swift */; };
 		88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C1255CAAEB003E9153 /* AppDelegate.swift */; };
 		88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */; };
 		88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48C5255CAAEB003E9153 /* ViewController.swift */; };
@@ -24,7 +27,10 @@
 		884780D7255D6C1B004D3782 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8876D2E6257307E200B5A7A6 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
+		8876D2ED25730F7100B5A7A6 /* MostPopularCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularCoursesView.swift; sourceTree = "<group>"; };
+		8876D2F125730F8F00B5A7A6 /* SquaredCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaredCourseCell.swift; sourceTree = "<group>"; };
 		8884DCAF255EC67D003EAAA3 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		88BB881E2573116200617508 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		88DF48BE255CAAEB003E9153 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DF48C1255CAAEB003E9153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DF48C3255CAAEB003E9153 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 		88045401255DFD5000BD619E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88BB881D2573115000617508 /* Shortcuts */,
+				8876D2EC25730F5A00B5A7A6 /* MostPopular */,
 				8876D2E02573077F00B5A7A6 /* RecommendationsSlider */,
 			);
 			path = Views;
@@ -80,12 +88,29 @@
 			path = RecommendationsSlider;
 			sourceTree = "<group>";
 		};
+		8876D2EC25730F5A00B5A7A6 /* MostPopular */ = {
+			isa = PBXGroup;
+			children = (
+				8876D2ED25730F7100B5A7A6 /* MostPopularCoursesView.swift */,
+				8876D2F125730F8F00B5A7A6 /* SquaredCourseCell.swift */,
+			);
+			path = MostPopular;
+			sourceTree = "<group>";
+		};
 		8884DCAE255EC66E003EAAA3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8884DCAF255EC67D003EAAA3 /* Course.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		88BB881D2573115000617508 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				88BB881E2573116200617508 /* Test.swift */,
+			);
+			path = Shortcuts;
 			sourceTree = "<group>";
 		};
 		88DF48B5255CAAEB003E9153 = {
@@ -195,12 +220,15 @@
 			files = (
 				8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */,
 				88DF48CC255CAAEB003E9153 /* FitnessApp.xcdatamodeld in Sources */,
+				8876D2EE25730F7100B5A7A6 /* MostPopularCoursesView.swift in Sources */,
 				8884DCB0255EC67D003EAAA3 /* Course.swift in Sources */,
 				88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */,
+				88BB881F2573116200617508 /* Test.swift in Sources */,
 				884780D8255D6C1B004D3782 /* Extensions.swift in Sources */,
 				88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */,
 				88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */,
 				8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */,
+				8876D2F225730F8F00B5A7A6 /* SquaredCourseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

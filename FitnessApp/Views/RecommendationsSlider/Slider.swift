@@ -20,7 +20,7 @@ class RecommendationsSlider: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         
-        collectionView.register(CourseCell.self, forCellWithReuseIdentifier: CourseCell.identifier)
+        collectionView.register(RecommendationCell.self, forCellWithReuseIdentifier: RecommendationCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,12 +30,7 @@ class RecommendationsSlider: UIView {
         
         self.addSubview(collectionView)
         
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        ])
+        StickToEdges(parent: self, child: collectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -52,7 +47,7 @@ extension RecommendationsSlider: UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCell.identifier, for: indexPath) as! CourseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationCell.identifier, for: indexPath) as! RecommendationCell
         
         cell.data = data[indexPath.item]
         

@@ -1,5 +1,5 @@
 //
-//  RecommendationCell.swift
+//  MostPopularCourseCellView.swift
 //  FitnessApp
 //
 //  Created by Ilya Senchukov on 29.11.2020.
@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-class RecommendationCell: UICollectionViewCell {
-    static let identifier = "CourseCell"
+class SquaredCourseCell: UICollectionViewCell {
+    
+    static let identifier = "SquaredCourseCell"
     
     var data: Course? {
         didSet {
@@ -18,7 +19,7 @@ class RecommendationCell: UICollectionViewCell {
             imageView.image = UIImage(named: data!.imageName)
         }
     }
-
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         
@@ -79,5 +80,7 @@ class RecommendationCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
 }
-

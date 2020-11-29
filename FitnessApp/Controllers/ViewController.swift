@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    var data: [Course] = [Course(title: "Training by Helen McGregor", imageName: "1"), Course(title: "Test title", imageName: "2"), Course(title: "Test title", imageName: "3")]
-    
+class ViewController: UIViewController {    
     let scrollView: UIScrollView = {
         let view = UIScrollView()
 
@@ -34,11 +32,8 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
-    let mostPopular: UILabel = {
-        let view = UILabel()
-        
-        view.text = "Most popular"
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let mostPopular: UIView = {
+        let view = MostPopularCoursesView()
         
         return view
     }()
@@ -111,7 +106,6 @@ class ViewController: UIViewController {
             mostPopular.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             mostPopular.heightAnchor.constraint(equalToConstant: 200)
         ])
-        mostPopular.backgroundColor = .orange
         
         let categoriesHeader: UILabel = getHeader(text: "Workout categories")
         contentView.addSubview(categoriesHeader)
