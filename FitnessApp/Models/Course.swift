@@ -13,6 +13,7 @@ class Course {
     var imageName: String = ""
     var title: String = ""
     var subtitle: String = "Check this out"
+    var length: Int = 12
     
     init(title: String, imageName: String) {
         self.title = title

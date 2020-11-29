@@ -36,6 +36,9 @@ class RecommendationCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 21)
         label.textColor = .white
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.contentMode = .bottomLeft
         
         return label
     }()
@@ -69,10 +72,9 @@ class RecommendationCell: UICollectionViewCell {
         contentView.addSubview(title)
         
         NSLayoutConstraint.activate([
-            title.bottomAnchor.constraint(equalTo: subtitle.topAnchor, constant: 5),
+            title.bottomAnchor.constraint(equalTo: subtitle.topAnchor, constant: -2),
             title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            title.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
     
