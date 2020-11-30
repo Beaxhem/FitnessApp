@@ -13,6 +13,6 @@ func StickToEdges<Parent: UIView, Child: UIView>(parent: Parent, child: Child) {
         child.topAnchor.constraint(equalTo: parent.topAnchor),
         child.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
         child.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
-        child.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+        child.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
     ])
 }

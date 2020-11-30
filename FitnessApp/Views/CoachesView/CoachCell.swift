@@ -1,17 +1,16 @@
 //
-//  MostPopularCourseCellView.swift
+//  CoachCell.swift
 //  FitnessApp
 //
-//  Created by Ilya Senchukov on 29.11.2020.
+//  Created by Ilya Senchukov on 30.11.2020.
 //
 
 import Foundation
 import UIKit
 
-class SquaredCourseCell: UICollectionViewCell, Cell {
-
-    static let identifier = "SquaredCourseCell"
-
+class CoachCell: UICollectionViewCell, Cell {
+    static let identifier = "CoachCell"
+    
     var data: ItemData? {
         didSet {
             if let data = data as? Course {
@@ -21,7 +20,7 @@ class SquaredCourseCell: UICollectionViewCell, Cell {
             }
         }
     }
-
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
 
@@ -43,6 +42,7 @@ class SquaredCourseCell: UICollectionViewCell, Cell {
         label.textAlignment = .left
         label.contentMode = .bottomLeft
         label.sizeToFit()
+        
         return label
     }()
 
@@ -84,3 +84,4 @@ class SquaredCourseCell: UICollectionViewCell, Cell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

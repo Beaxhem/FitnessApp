@@ -38,20 +38,14 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let categories: UILabel = {
-        let view = UILabel()
-        
-        view.text = "Categories"
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let categories: UIView = {
+        let view = CategoriesView()
         
         return view
     }()
     
-    let coaches: UILabel = {
-        let view = UILabel()
-        
-        view.text = "Coaches"
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let coaches: UIView = {
+        let view = FamousCoachesView()
         
         return view
     }()
@@ -93,7 +87,7 @@ class ViewController: UIViewController {
         let popularTrainingsHeader: UILabel = getHeader(text: "Most popular")
         contentView.addSubview(popularTrainingsHeader)
         NSLayoutConstraint.activate([
-            popularTrainingsHeader.topAnchor.constraint(equalTo: recommendations.bottomAnchor, constant: 20),
+            popularTrainingsHeader.topAnchor.constraint(equalTo: recommendations.bottomAnchor, constant: 30),
             popularTrainingsHeader.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             popularTrainingsHeader.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
         ])
@@ -110,7 +104,7 @@ class ViewController: UIViewController {
         let categoriesHeader: UILabel = getHeader(text: "Workout categories")
         contentView.addSubview(categoriesHeader)
         NSLayoutConstraint.activate([
-            categoriesHeader.topAnchor.constraint(equalTo: mostPopular.bottomAnchor, constant: 20),
+            categoriesHeader.topAnchor.constraint(equalTo: mostPopular.bottomAnchor, constant: 30),
             categoriesHeader.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             categoriesHeader.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
         ])
@@ -122,14 +116,13 @@ class ViewController: UIViewController {
             categories.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             categories.heightAnchor.constraint(equalToConstant: 255)
         ])
-        categories.backgroundColor = .yellow
         
         let popularCoachesHeader = getHeader(text: "Popular coaches")
         
         contentView.addSubview(popularCoachesHeader)
         
         NSLayoutConstraint.activate([
-            popularCoachesHeader.topAnchor.constraint(equalTo: categories.bottomAnchor, constant: 20),
+            popularCoachesHeader.topAnchor.constraint(equalTo: categories.bottomAnchor, constant: 30),
             popularCoachesHeader.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             popularCoachesHeader.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
@@ -143,8 +136,6 @@ class ViewController: UIViewController {
             coaches.heightAnchor.constraint(equalToConstant: 210),
             coaches.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
-        
-        coaches.backgroundColor = .green
     }
 }
 

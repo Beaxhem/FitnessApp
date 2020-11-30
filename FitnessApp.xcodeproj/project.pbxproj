@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88168EB4257594DC00B84AB5 /* HorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88168EB3257594DC00B84AB5 /* HorizontalCollectionView.swift */; };
+		88168EB92575998C00B84AB5 /* FamousCoachesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88168EB82575998C00B84AB5 /* FamousCoachesView.swift */; };
+		88168EBD25759DCC00B84AB5 /* CoachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88168EBC25759DCC00B84AB5 /* CoachCell.swift */; };
 		884780D8255D6C1B004D3782 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884780D7255D6C1B004D3782 /* Extensions.swift */; };
 		8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E6257307E200B5A7A6 /* Slider.swift */; };
 		8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */; };
@@ -21,9 +24,16 @@
 		88DF48CC255CAAEB003E9153 /* FitnessApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88DF48CA255CAAEB003E9153 /* FitnessApp.xcdatamodeld */; };
 		88DF48CE255CAAF0003E9153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DF48CD255CAAF0003E9153 /* Assets.xcassets */; };
 		88DF48D1255CAAF0003E9153 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DF48CF255CAAF0003E9153 /* LaunchScreen.storyboard */; };
+		88F817DF25745E330088E6AA /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F817DE25745E330088E6AA /* CategoriesView.swift */; };
+		88F817E325745E920088E6AA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F817E225745E920088E6AA /* Category.swift */; };
+		88F817E625745FA90088E6AA /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F817E525745FA90088E6AA /* CategoryCellView.swift */; };
+		88F817EA2574F1C00088E6AA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F817E92574F1BF0088E6AA /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88168EB3257594DC00B84AB5 /* HorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionView.swift; sourceTree = "<group>"; };
+		88168EB82575998C00B84AB5 /* FamousCoachesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamousCoachesView.swift; sourceTree = "<group>"; };
+		88168EBC25759DCC00B84AB5 /* CoachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCell.swift; sourceTree = "<group>"; };
 		884780D7255D6C1B004D3782 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8876D2E6257307E200B5A7A6 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		8876D2E925730F1900B5A7A6 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
@@ -40,6 +50,10 @@
 		88DF48CD255CAAF0003E9153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88DF48D0255CAAF0003E9153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88DF48D2255CAAF0003E9153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F817DE25745E330088E6AA /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		88F817E225745E920088E6AA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		88F817E525745FA90088E6AA /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
+		88F817E92574F1BF0088E6AA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,17 +70,38 @@
 		88045401255DFD5000BD619E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88BB881D2573115000617508 /* Shortcuts */,
+				88168EB72575997100B84AB5 /* CoachesView */,
+				88F817DD25745E230088E6AA /* Categories */,
 				8876D2EC25730F5A00B5A7A6 /* MostPopular */,
 				8876D2E02573077F00B5A7A6 /* RecommendationsSlider */,
+				88BB881D2573115000617508 /* Shortcuts */,
+				88168EB2257594C700B84AB5 /* Slider */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		88168EB2257594C700B84AB5 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				88168EB3257594DC00B84AB5 /* HorizontalCollectionView.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		88168EB72575997100B84AB5 /* CoachesView */ = {
+			isa = PBXGroup;
+			children = (
+				88168EB82575998C00B84AB5 /* FamousCoachesView.swift */,
+				88168EBC25759DCC00B84AB5 /* CoachCell.swift */,
+			);
+			path = CoachesView;
 			sourceTree = "<group>";
 		};
 		884780D5255D6BFD004D3782 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				884780D7255D6C1B004D3782 /* Extensions.swift */,
+				88F817E92574F1BF0088E6AA /* Database.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -101,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				8884DCAF255EC67D003EAAA3 /* Course.swift */,
+				88F817E225745E920088E6AA /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +183,15 @@
 			path = FitnessApp;
 			sourceTree = "<group>";
 		};
+		88F817DD25745E230088E6AA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				88F817DE25745E330088E6AA /* CategoriesView.swift */,
+				88F817E525745FA90088E6AA /* CategoryCellView.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +202,7 @@
 				88DF48BA255CAAEB003E9153 /* Sources */,
 				88DF48BB255CAAEB003E9153 /* Frameworks */,
 				88DF48BC255CAAEB003E9153 /* Resources */,
+				88168EAF25755DC900B84AB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,19 +259,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88168EAF25755DC900B84AB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88DF48BA255CAAEB003E9153 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88168EBD25759DCC00B84AB5 /* CoachCell.swift in Sources */,
 				8876D2EA25730F1900B5A7A6 /* RecommendationCell.swift in Sources */,
 				88DF48CC255CAAEB003E9153 /* FitnessApp.xcdatamodeld in Sources */,
 				8876D2EE25730F7100B5A7A6 /* MostPopularCoursesView.swift in Sources */,
+				88F817EA2574F1C00088E6AA /* Database.swift in Sources */,
 				8884DCB0255EC67D003EAAA3 /* Course.swift in Sources */,
 				88DF48C6255CAAEB003E9153 /* ViewController.swift in Sources */,
 				88BB881F2573116200617508 /* Test.swift in Sources */,
 				884780D8255D6C1B004D3782 /* Extensions.swift in Sources */,
 				88DF48C2255CAAEB003E9153 /* AppDelegate.swift in Sources */,
+				88F817E625745FA90088E6AA /* CategoryCellView.swift in Sources */,
+				88168EB4257594DC00B84AB5 /* HorizontalCollectionView.swift in Sources */,
+				88F817DF25745E330088E6AA /* CategoriesView.swift in Sources */,
+				88168EB92575998C00B84AB5 /* FamousCoachesView.swift in Sources */,
+				88F817E325745E920088E6AA /* Category.swift in Sources */,
 				88DF48C4255CAAEB003E9153 /* SceneDelegate.swift in Sources */,
 				8876D2E7257307E200B5A7A6 /* Slider.swift in Sources */,
 				8876D2F225730F8F00B5A7A6 /* SquaredCourseCell.swift in Sources */,
